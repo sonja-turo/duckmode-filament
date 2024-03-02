@@ -13,7 +13,7 @@ class FeederWidget extends Widget
     public string $audioAsset = '';
 
     protected static ?array $options = [
-        'rotation'=> 270, // start angle in degrees
+        'rotation' => 270, // start angle in degrees
         'circumference' => 180, // sweep angle in degrees
         'height' => 60,
         'width' => 60,
@@ -22,16 +22,16 @@ class FeederWidget extends Widget
     public function __construct()
     {
         $this->audioAsset = filament('duckmode-filament')
-            ->getAudioAssetsPath()."/{$this->assetName}.mp3";
+            ->getAudioAssetsPath() . "/{$this->assetName}.mp3";
     }
 
     protected function getChartData(): array
     {
         return [
-            'datasets' =>[[
-                'data'=> [100, 0],
-                'backgroundColor'=> ["Green", "Gray"]
-            ]]
+            'datasets' => [[
+                'data' => [100, 0],
+                'backgroundColor' => ['Green', 'Gray'],
+            ]],
         ];
     }
 
@@ -44,5 +44,4 @@ class FeederWidget extends Widget
     {
         return 'doughnut';
     }
-
 }

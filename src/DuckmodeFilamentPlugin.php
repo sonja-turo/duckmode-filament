@@ -17,7 +17,7 @@ class DuckmodeFilamentPlugin implements Plugin
         $panel
             ->widgets([
                 ...$panel->getWidgets(),
-                FeederWidget::class
+                FeederWidget::class,
             ]);
     }
 

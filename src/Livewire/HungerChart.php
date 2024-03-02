@@ -9,7 +9,7 @@ class HungerChart extends ChartWidget
     protected static ?string $heading = 'Hunger Level';
 
     protected static ?array $options = [
-        'rotation'=> 270, // start angle in degrees
+        'rotation' => 270, // start angle in degrees
         'circumference' => 180, // sweep angle in degrees
         'height' => 60,
         'width' => 60,
@@ -18,12 +18,12 @@ class HungerChart extends ChartWidget
     protected function getData(): array
     {
         return [
-            'labels' => ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-            'datasets' =>[[
-                'label'=> '# of Votes',
-                'data'=> [12, 19, 3, 5, 2, 3],
-                'backgroundColor'=> ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"]
-            ]]
+            'labels' => ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            'datasets' => [[
+                'label' => '# of Votes',
+                'data' => [12, 19, 3, 5, 2, 3],
+                'backgroundColor' => ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            ]],
         ];
     }
 
