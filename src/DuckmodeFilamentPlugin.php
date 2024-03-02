@@ -1,6 +1,7 @@
 <?php
 
 // 🦆
+
 namespace Sonjaturo\DuckmodeFilament;
 
 use Filament\Contracts\Plugin;
