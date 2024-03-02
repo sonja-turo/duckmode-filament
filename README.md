@@ -1,4 +1,4 @@
-# This is my package duckmode-filament
+# Duck Mode for Filament
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/sonja-turo/duckmode-filament.svg?style=flat-square)](https://packagist.org/packages/sonja-turo/duckmode-filament)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/sonja-turo/duckmode-filament/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/sonja-turo/duckmode-filament/actions?query=workflow%3Arun-tests+branch%3Amain)
@@ -7,72 +7,53 @@
 
 
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+This is what you get when you have a slow Saturday night and nobody around to annoy. You annoy the rest of the world.
 
 ## Installation
 
-You can install the package via composer:
+Firstly, pour yourself a large draw of your favourite drink. Don't mind me, I'll wait.
+
+...
+
+Ok, done? Now, install the package via composer:
 
 ```bash
 composer require sonja-turo/duckmode-filament
 ```
 
-You can publish and run the migrations with:
+Next, because Duck Mode without Quacking is just a silly package instead of the life changing experience it was designed to be, install the assets:
 
 ```bash
-php artisan vendor:publish --tag="duckmode-filament-migrations"
-php artisan migrate
-```
-
-You can publish the config file with:
-
-```bash
-php artisan vendor:publish --tag="duckmode-filament-config"
-```
-
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag="duckmode-filament-views"
-```
-
-This is the contents of the published config file:
-
-```php
-return [
-];
+php artisan vendor:publish --tag="duckmode-filament-assets"
 ```
 
 ## Usage
 
-```php
-$duckmodeFilament = new Sonjaturo\DuckmodeFilament();
-echo $duckmodeFilament->echoPhrase('Hello, Sonjaturo!');
-```
+Um, I think it auto-adds itself to the default Filament Admin Panel dashboard.
 
 ## Testing
 
-```bash
-composer test
-```
+I didn't do any. Why should I make you?
 
 ## Changelog
 
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
+Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently, or to read something that is most likely horribly wrong.
 
 ## Contributing
 
-Please see [CONTRIBUTING](.github/CONTRIBUTING.md) for details.
+Please see [CONTRIBUTING](.github/CONTRIBUTING.md) for details. You know I never bothered to read the stub for this, right?
 
 ## Security Vulnerabilities
 
-Please review [our security policy](../../security/policy) on how to report security vulnerabilities.
+Please review [our security policy](../../security/policy) on how to report security vulnerabilities. Nope, didn't read this either. But you're installing
+this anyway, and even I'm telling you not to. Says more about you than it does me.
 
 ## Credits
 
 - [SonjaTuro](https://github.com/sonja-turo)
+- [Team Shitware](https://github.com/shitware-ltd)
 - [All Contributors](../../contributors)
 
 ## License
 
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information. My God, you read this far.
