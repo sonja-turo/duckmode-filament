@@ -12,10 +12,37 @@ class FeederWidget extends Widget
 
     public string $audioAsset = '';
 
+    protected static ?array $options = [
+        'rotation'=> 270, // start angle in degrees
+        'circumference' => 180, // sweep angle in degrees
+        'height' => 60,
+        'width' => 60,
+    ];
+
     public function __construct()
     {
         $this->audioAsset = filament('duckmode-filament')
             ->getAudioAssetsPath()."/{$this->assetName}.mp3";
+    }
+
+    protected function getChartData(): array
+    {
+        return [
+            'datasets' =>[[
+                'data'=> [100, 0],
+                'backgroundColor'=> ["Green", "Gray"]
+            ]]
+        ];
+    }
+
+    protected function getChartOptions(): ?array
+    {
+        return static::$options;
+    }
+
+    protected function getChartType(): string
+    {
+        return 'doughnut';
     }
 
 }

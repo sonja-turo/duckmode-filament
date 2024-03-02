@@ -4,7 +4,13 @@
             x-ignore
             ax-load
             ax-load-src="{{ \Filament\Support\Facades\FilamentAsset::getAlpineComponentSrc('duckmode-feeder', 'sonjaturo/duckmode-filament') }}"
-            x-data="duckFeederWidget()"
+            x-data="duckFeederWidget({
+                chart: {
+                        cachedData: @js($this->getChartData()),
+                        options: @js($this->getChartOptions()),
+                        type: @js($this->getChartType()),
+                    }
+                })"
             class="flex items-center gap-x-3"
         >
             <div class="h-10 w-10">
@@ -25,10 +31,10 @@
             <div class="flex-1"
                 class="text-center"
             >
-                <p class="text-xl" x-text="hungerLevel"></p>
-        
-
-                
+                <canvas
+                    x-ref="canvas"
+                    style="max-height:80px"
+                ></canvas> 
             </div>
             <div>
                 <audio src="{{ $audioAsset }}" x-ref="duckmodeAudio"></audio>

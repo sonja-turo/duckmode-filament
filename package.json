@@ -9,6 +9,7 @@
         "esbuild": "^0.17.19"
     },
     "dependencies": {
-        "canvas-gauges": "^2.1.7-radial"
+        "canvas-gauges": "^2.1.7-radial",
+        "chart.js": "^4.4.2"
     }
 }
