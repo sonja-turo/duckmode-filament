@@ -1,31 +1,30 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "sonja-turo/duckmode-filament",
+    "description": "This is my package duckmode-filament",
     "keywords": [
-        ":vendor_name",
+        "sonja-turo",
         "laravel",
-        ":package_slug"
+        "duckmode-filament"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/sonja-turo/duckmode-filament",
     "support": {
-        "issues": "https://github.com/:vendor_slug/:package_slug/issues",
-        "source": "https://github.com/:vendor_slug/:package_slug"
+        "issues": "https://github.com/sonja-turo/duckmode-filament/issues",
+        "source": "https://github.com/sonja-turo/duckmode-filament"
     },
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "SonjaTuro",
+            "email": "sonja.turo@rout.net",
             "role": "Developer"
         }
     ],
     "require": {
         "php": "^8.1",
+        "andreiio/blade-iconoir": "^3.3",
         "filament/filament": "^3.0",
-        "filament/forms": "^3.0",
-        "filament/tables": "^3.0",
-        "spatie/laravel-package-tools": "^1.15.0",
-        "illuminate/contracts": "^10.0"
+        "illuminate/contracts": "^10.0",
+        "spatie/laravel-package-tools": "^1.15.0"
     },
     "require-dev": {
         "laravel/pint": "^1.0",
@@ -42,13 +41,12 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src/",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories/"
+            "Sonjaturo\\DuckmodeFilament\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests/"
+            "Sonjaturo\\DuckmodeFilament\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -68,11 +66,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
-            ],
-            "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
-            }
+                "Sonjaturo\\DuckmodeFilament\\DuckmodeFilamentServiceProvider"
+            ]
         }
     },
     "minimum-stability": "dev",

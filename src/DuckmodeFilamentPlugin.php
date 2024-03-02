@@ -1,25 +1,29 @@
 <?php
 
-namespace VendorName\Skeleton;
+namespace Sonjaturo\DuckmodeFilament;
 
 use Filament\Contracts\Plugin;
 use Filament\Panel;
 
-class SkeletonPlugin implements Plugin
+class DuckmodeFilamentPlugin implements Plugin
 {
     public function getId(): string
     {
-        return 'skeleton';
+        return 'duckmode-filament';
     }
 
     public function register(Panel $panel): void
     {
-        //
+        $panel
+            ->widgets([
+                ...$panel->getWidgets(),
+                FeederWidget::class
+            ]);
     }
 
     public function boot(Panel $panel): void
     {
-        //
+
     }
 
     public static function make(): static
@@ -33,5 +37,10 @@ class SkeletonPlugin implements Plugin
         $plugin = filament(app(static::class)->getId());
 
         return $plugin;
+    }
+
+    public function getAudioAssetsPath(): string
+    {
+        return ltrim("vendor/{$this->getId()}/audio", '/');
     }
 }
