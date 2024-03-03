@@ -9,7 +9,8 @@
                         cachedData: @js($this->getChartData()),
                         options: @js($this->getChartOptions()),
                         type: @js($this->getChartType()),
-                    }
+                    },
+                lang: @js($this->getLang())
                 })"
             class="flex items-center gap-x-3"
         >

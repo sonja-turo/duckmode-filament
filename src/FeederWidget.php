@@ -42,6 +42,14 @@ class FeederWidget extends Widget
 
     protected function getChartType(): string
     {
-        return 'doughnut';
+        return 'hunger';
+    }
+
+    protected function getLang(): array {
+        return [
+            'ok' => __('duckmode::duck.ok'),
+            'hungry' => __('duckmode::duck.hungry'),
+            'starving' => __('duckmode::duck.starving'),
+        ];
     }
 }

@@ -1,7 +1,6 @@
-import { Chart } from "chart.js/auto";
-import "chartjs-adapter-luxon";
+import { Chart } from "../hunger-chart";
 
-export default function duckFeederWidget(data) {
+export default function duckFeederWidget({ chart, lang}) {
     return {
         hungerLevel: 100,
         ducksMurdered: 0,
@@ -38,27 +37,29 @@ export default function duckFeederWidget(data) {
         },
 
         initChart() {
-
-            Chart.defaults.plugins.tooltip.enabled = false;
-            Chart.defaults.plugins.legend.display = false;
-            return new Chart(this.$refs.canvas, {
-                type: data.chart.type,
-                data: data.chart.cachedData,
-                options: data.chart.options,
+            const newChart = new Chart(this.$refs.canvas, {
+                type: chart.type,
+                data: chart.cachedData,
+                options: chart.options,
             });
+            newChart.hungerLevel = this.hungerLevel;
+            newChart.lang = lang;
+            return newChart;
         },
         updateChart() {
-            let chart = this.getChart()
+            const chart = this.getChart()
             chart.data = {
                 datasets:[{
                     data: [this.hungerLevel, 100 - this.hungerLevel],
                     backgroundColor: [this.getStateColour(), "Gray"]
-                }]
+                }],
+                lang: lang
             }
+            chart.hungerLevel = this.hungerLevel;
             chart.update('resize')
         },
         getStateColour() {
-            return this.hungerLevel >=50 ? "Green": this.hungerLevel >= 15 ? "Orange": "Red";
+            return this.hungerLevel >=50 ? "Green": this.hungerLevel >= 20 ? "Orange": "Red";
         },
         getChart() {
             return Chart.getChart(this.$refs.canvas);

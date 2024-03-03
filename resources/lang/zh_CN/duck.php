@@ -7,5 +7,8 @@ return [
     'duck-mode' => '鸭子模式',
     'ducks-murdered' => '鸭子被杀',
     'give-bread' => '给面包',
+    'hungry' => '饥饿的',
+    'ok' => '好的',
     'quack' => '嘎嘎',
+    'starving' => '挨饿',
 ];
