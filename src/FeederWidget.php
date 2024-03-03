@@ -45,7 +45,8 @@ class FeederWidget extends Widget
         return 'hunger';
     }
 
-    protected function getLang(): array {
+    protected function getLang(): array
+    {
         return [
             'ok' => __('duckmode::duck.ok'),
             'hungry' => __('duckmode::duck.hungry'),
