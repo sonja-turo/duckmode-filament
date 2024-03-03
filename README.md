@@ -29,7 +29,39 @@ php artisan vendor:publish --tag="duckmode-filament-assets"
 
 ## Usage
 
-Um, I think it auto-adds itself to the default Filament Admin Panel dashboard.
+### Adding Duck Mode to your admin panel
+Firstly, register the plugin with your panel. It's easy, don't be shy, just open the relevant FilamenttPHP
+Panel Provider, and add the plugin file.
+
+```php
+use Sonjaturo\DuckmodeFilament\DuckmodeFilamentPlugin;
+...
+public function panel(Panel $panel): Panel
+{
+    return $panel
+        ...
+        ->plugin(DuckmodeFilamentPlugin::make());
+}
+```
+
+### Feeder Widget
+Add the Feeder Widget to anywhere in your FilamentPHP dashboard by appending it to the `widgets` array in
+your panel's configuration.
+
+```php
+use Sonjaturo\DuckmodeFilament\FeederWidget;
+...
+public function panel(Panel $panel): Panel
+{
+    return $panel
+        ...
+        ->widgets([
+            Widgets\AccountWidget::class,
+            Widgets\FilamentInfoWidget::class,
+            FeederWidget::class,
+        ]);
+}
+```
 
 ## Testing
 
