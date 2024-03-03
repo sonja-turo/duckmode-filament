@@ -14,6 +14,7 @@ class FeederWidget extends Widget
     public string $audioAsset = '';
 
     public int $starvationRate = 1000;
+
     public int $bread = 5;
 
     protected static ?array $options = [
