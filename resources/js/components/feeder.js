@@ -1,6 +1,6 @@
 import { Chart } from "../hunger-chart";
 
-export default function duckFeederWidget({ chart, lang, starvationRate}) {
+export default function duckFeederWidget({ chart, lang, starvationRate, breadHealth}) {
     return {
         hungerLevel: 100,
         ducksMurdered: 0,
@@ -29,7 +29,7 @@ export default function duckFeederWidget({ chart, lang, starvationRate}) {
                 this.audioPlayed = true;
             }
             
-            this.hungerLevel +=5;
+            this.hungerLevel +=breadHealth;
             if (this.hungerLevel > 100) {
                 this.hungerLevel = 100;
             }

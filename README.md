@@ -49,6 +49,8 @@ Add the Feeder Widget to anywhere in your FilamentPHP dashboard by appending it 
 your panel's configuration.
 
 ```php
+use Sonjaturo\DuckmodeFilament\Bread;
+use Sonjaturo\DuckmodeFilament\BreadType;
 use Sonjaturo\DuckmodeFilament\FeederWidget;
 ...
 public function panel(Panel $panel): Panel
@@ -60,12 +62,16 @@ public function panel(Panel $panel): Panel
             Widgets\FilamentInfoWidget::class,
             FeederWidget::make([
                 'starvationRate' => 1000,
+                'bread' => new Bread(BreadType::White)
             ]),
         ]);
 }
 ```
 
 Set the `starvationRate` to the number of milliseconds for each tick that your's health deteriorates.
+
+The optional `bread` parameter can be one of the known bread types: `White`, `Brown`, `Multigrain`, `GlutenFree`, `Pita`, `Turkish`, `Raisin`, `Dwarf` or `None`.
+The default is `White`.
 
 ## Testing
 

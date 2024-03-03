@@ -6,6 +6,7 @@ This changelog is probably wildly inaccurate. In fact, I have no doubt.
 
 - Customised the chart from chart.js with status text and nice colours
 - Add starvationRate property to speed up or slow down duck death.
+- Add types of bread property to affect duck health. Types include White, Brown, Multigrain, GlutenFree, Pita, Turkish, Raisuin, Dwarf or None
 
 ## 0.0.1 - 2024-03-02
 

@@ -11,7 +11,8 @@
                         type: @js($this->getChartType()),
                     },
                 lang: @js($this->getLang()),
-                starvationRate: {{$this->starvationRate}},
+                starvationRate: {{ $this->starvationRate }},
+                breadHealth: {{ $this->bread }}
                 })"
             class="flex items-center gap-x-3"
         >
