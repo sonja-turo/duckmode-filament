@@ -10,7 +10,8 @@
                         options: @js($this->getChartOptions()),
                         type: @js($this->getChartType()),
                     },
-                lang: @js($this->getLang())
+                lang: @js($this->getLang()),
+                starvationRate: {{$this->starvationRate}},
                 })"
             class="flex items-center gap-x-3"
         >

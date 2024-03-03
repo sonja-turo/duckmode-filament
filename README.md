@@ -58,10 +58,14 @@ public function panel(Panel $panel): Panel
         ->widgets([
             Widgets\AccountWidget::class,
             Widgets\FilamentInfoWidget::class,
-            FeederWidget::class,
+            FeederWidget::make([
+                'starvationRate' => 1000,
+            ]),
         ]);
 }
 ```
+
+Set the `starvationRate` to the number of milliseconds for each tick that your's health deteriorates.
 
 ## Testing
 

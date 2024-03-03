@@ -12,11 +12,11 @@ class FeederWidget extends Widget
 
     public string $audioAsset = '';
 
+    public int $starvationRate = 1000;
+
     protected static ?array $options = [
         'rotation' => 270, // start angle in degrees
         'circumference' => 180, // sweep angle in degrees
-        'height' => 60,
-        'width' => 60,
     ];
 
     public function __construct()
