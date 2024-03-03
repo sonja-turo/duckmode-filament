@@ -46,7 +46,7 @@ public function panel(Panel $panel): Panel
 
 ### Feeder Widget
 Add the Feeder Widget to anywhere in your FilamentPHP dashboard by appending it to the `widgets` array in
-your panel's configuration.
+your panel's configuration. Starvation and murders are tracked over time.
 
 ```php
 use Sonjaturo\DuckmodeFilament\Bread;

@@ -6,6 +6,12 @@ export default function duckFeederWidget({ chart, lang, starvationRate, breadHea
         ducksMurdered: 0,
         audioPlayed: false,
         init() {
+            const duckState  = localStorage.getItem('duck-mode.state');
+            if (duckState) {
+                const state = JSON.parse(duckState);
+                this.hungerLevel = parseInt(state.hungerLevel) ?? 100;
+                this.ducksMurdered = parseInt(state.ducksMurdered) ?? 0;
+            }
             this.initChart();
 
             setInterval(() => {
@@ -15,6 +21,7 @@ export default function duckFeederWidget({ chart, lang, starvationRate, breadHea
                     this.hungerLevel = 100;
                     this.ducksMurdered++; 
                 }
+                localStorage.setItem('duck-mode.state', JSON.stringify({ hungerLevel: this.hungerLevel, ducksMurdered: this.ducksMurdered }));
                 this.updateChart();
             }, starvationRate);
 
@@ -22,6 +29,7 @@ export default function duckFeederWidget({ chart, lang, starvationRate, breadHea
             setInterval(() => {
                 this.audioPlayed = false;
             }, 3000)
+            this.updateChart();
         },
         feedDuck() {
             if (!this.audioPlayed) {
@@ -33,6 +41,7 @@ export default function duckFeederWidget({ chart, lang, starvationRate, breadHea
             if (this.hungerLevel > 100) {
                 this.hungerLevel = 100;
             }
+            localStorage.setItem('duck-mode.state', JSON.stringify({ hungerLevel: this.hungerLevel, ducksMurdered: this.ducksMurdered }));
             this.updateChart();
         },
 
