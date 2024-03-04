@@ -2,6 +2,10 @@
 
 This changelog is probably wildly inaccurate. In fact, I have no doubt.
 
+## 0.0.3 - 2024-03-04
+
+This removes an experiment that I forgot about, and didn't remove references to. Thanks to Shitware Ltd Command-in-Chief Jorqensen for his tireless pursuit of perfection and assorted leather masks.
+
 ## 0.0.2 - 204-03-03
 
 - Customised the chart from chart.js with status text and nice colours
