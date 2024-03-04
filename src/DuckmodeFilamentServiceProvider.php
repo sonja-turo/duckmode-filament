@@ -4,11 +4,9 @@ namespace Sonjaturo\DuckmodeFilament;
 
 use BladeUI\Icons\Factory;
 use Filament\Support\Assets\AlpineComponent;
-use Filament\Support\Assets\Asset;
 use Filament\Support\Facades\FilamentAsset;
 use Filament\Support\Facades\FilamentIcon;
 use Livewire\Livewire;
-use Sonjaturo\DuckmodeFilament\Assets\Audio;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -50,7 +48,6 @@ class DuckmodeFilamentServiceProvider extends PackageServiceProvider
         FilamentAsset::register(
             assets: [
                 AlpineComponent::make('duckmode-feeder', __DIR__ . '/../resources/dist/components/duckmode-feeder.js'),
-                Audio::make('duckmode-quack', __DIR__ . '/../resources/audio/quack.mp3'),
             ],
             package: 'sonjaturo/duckmode-filament'
         );
