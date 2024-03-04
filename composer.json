@@ -1,10 +1,11 @@
 {
     "name": "sonja-turo/duckmode-filament",
-    "description": "This is my package duckmode-filament",
+    "description": "Duck Mode plugin for FilamentPHP",
     "keywords": [
-        "sonja-turo",
         "laravel",
-        "duckmode-filament"
+        "filamentphp",
+        "duckmode",
+        "quack"
     ],
     "homepage": "https://github.com/sonja-turo/duckmode-filament",
     "support": {
