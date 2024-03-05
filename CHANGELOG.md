@@ -7,9 +7,9 @@ This changelog is probably wildly inaccurate. In fact, I have no doubt.
  - Added a new Table Quaction for Filament Tables
  - Added some fairly useless tests that nevertheless achieve... something?
 
-## 0.0.3 - 2024-03-05
+## 0.0.3 - 2024-03-04
 
- - Update some stuff so that the plugin appears on Packagist.
+This removes an experiment that I forgot about, and didn't remove references to. Thanks to Shitware Ltd Commander-in-Chief Jorqensen for his tireless pursuit of perfection and assorted leather masks.
 
 ## 0.0.2 - 2024-03-03
 
