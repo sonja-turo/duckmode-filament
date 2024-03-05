@@ -36,6 +36,7 @@ class DuckmodeFilamentServiceProvider extends PackageServiceProvider
 
         FilamentIcon::register([
             'duckmode::widget.bread' => 'duckmode-regular-bread-slice',
+            'duckmode::ducky' => 'duckmode-ducky',
         ]);
 
         Livewire::component('duckmode-feeder', FeederWidget::class);

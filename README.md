@@ -73,6 +73,22 @@ Set the `starvationRate` to the number of milliseconds for each tick that your's
 The optional `bread` parameter can be one of the known bread types: `White`, `Brown`, `Multigrain`, `GlutenFree`, `Pita`, `Turkish`, `Raisin`, `Dwarf` or `None`.
 The default is `White`.
 
+### Table Quactions
+To add quacking to any of your Filament table definitions, just add a Quaction to your table actions.
+
+```php
+use Sonjaturo\DuckmodeFilament\Tables\Quaction;
+...
+public function table(Table $table): Table
+{
+    return $table
+        ...
+        ->actions([
+            Quaction::make(),
+        ]);
+}
+```
+
 ## Testing
 
 I didn't do any. Why should I make you?
@@ -93,8 +109,8 @@ this anyway, and even I'm telling you not to. Says more about you than it does m
 ## Credits
 
 - [SonjaTuro](https://github.com/sonja-turo)
+- [Arko Elsenaar](https://github.com/arkoe)
 - [Team Shitware](https://github.com/shitware-ltd)
-- [All Contributors](../../contributors)
 
 ## License
 

@@ -2,7 +2,16 @@
 
 This changelog is probably wildly inaccurate. In fact, I have no doubt.
 
-## 0.0.2 - 204-03-03
+## 0.1.0 - 2024-03-05
+
+ - Added a new Table Quaction for Filament Tables
+ - Added some fairly useless tests that nevertheless achieve... something?
+
+## 0.0.3 - 2024-03-05
+
+ - Update some stuff so that the plugin appears on Packagist.
+
+## 0.0.2 - 2024-03-03
 
 - Customised the chart from chart.js with status text and nice colours
 - Add starvationRate property to speed up or slow down duck death.
