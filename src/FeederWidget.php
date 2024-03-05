@@ -29,7 +29,7 @@ class FeederWidget extends Widget
     public function __construct()
     {
         $this->audioAsset = filament('duckmode-filament')
-                ->getAudioAssetsPath() . "/{$this->assetName}.mp3";
+            ->getAudioAssetsPath() . "/{$this->assetName}.mp3";
     }
 
     protected function getChartData(): array
@@ -72,13 +72,15 @@ class FeederWidget extends Widget
     #[On('duck-murder')]
     public function confrontMonster(): void
     {
-        if (!$this->reportMurders) return;
+        if (! $this->reportMurders) {
+            return;
+        }
 
         Notification::make()
             ->danger()
             ->icon('duckmode-ducky')
             ->title("You've murdered a duck!")
-            ->body("Authorities have been informed about your wrongdoings")
+            ->body('Authorities have been informed about your wrongdoings')
             ->send();
     }
 }
