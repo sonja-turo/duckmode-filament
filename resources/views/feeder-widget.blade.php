@@ -31,13 +31,12 @@
                     <span x-text="ducksMurdered" class="font-bold"></span> {{ __('duckmode::duck.Ducks-murdered') }}.
                 </p>
             </div>
-            <div class="flex-1"
-                class="text-center"
-            >
-                <canvas
-                    x-ref="canvas"
-                    style="max-height:80px"
-                ></canvas> 
+            <div class="flex-1">
+                <div style="position: relative; width:100px;">
+                    <canvas
+                        x-ref="canvas"
+                    ></canvas> 
+                </div>
             </div>
             <div>
                 <audio src="{{ $audioAsset }}" x-ref="duckmodeAudio"></audio>
