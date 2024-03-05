@@ -2,8 +2,10 @@
 
 namespace Sonjaturo\DuckmodeFilament;
 
+use Filament\Notifications\Notification;
 use Filament\Widgets\Widget;
 use Filament\Widgets\WidgetConfiguration;
+use Livewire\Attributes\On;
 
 class FeederWidget extends Widget
 {
@@ -17,6 +19,8 @@ class FeederWidget extends Widget
 
     public int $bread = 5;
 
+    public bool $reportMurders = true;
+
     protected static ?array $options = [
         'rotation' => 270, // start angle in degrees
         'circumference' => 180, // sweep angle in degrees
@@ -25,7 +29,7 @@ class FeederWidget extends Widget
     public function __construct()
     {
         $this->audioAsset = filament('duckmode-filament')
-            ->getAudioAssetsPath() . "/{$this->assetName}.mp3";
+                ->getAudioAssetsPath() . "/{$this->assetName}.mp3";
     }
 
     protected function getChartData(): array
@@ -63,5 +67,18 @@ class FeederWidget extends Widget
         $properties['bread'] = $bread->getHealthValue();
 
         return parent::make($properties);
+    }
+
+    #[On('duck-murder')]
+    public function confrontMonster(): void
+    {
+        if (!$this->reportMurders) return;
+
+        Notification::make()
+            ->danger()
+            ->icon('duckmode-ducky')
+            ->title("You've murdered a Duck!")
+            ->body("Authorities have been informed about your wrongdoings")
+            ->send();
     }
 }

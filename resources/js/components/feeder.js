@@ -1,12 +1,12 @@
 import { Chart } from "../hunger-chart";
 
-export default function duckFeederWidget({ chart, lang, starvationRate, breadHealth}) {
+export default function duckFeederWidget({chart, lang, starvationRate, breadHealth}) {
     return {
         hungerLevel: 100,
         ducksMurdered: 0,
         audioPlayed: false,
         init() {
-            const duckState  = localStorage.getItem('duck-mode.state');
+            const duckState = localStorage.getItem('duck-mode.state');
             if (duckState) {
                 const state = JSON.parse(duckState);
                 this.hungerLevel = parseInt(state.hungerLevel) ?? 100;
@@ -19,9 +19,10 @@ export default function duckFeederWidget({ chart, lang, starvationRate, breadHea
 
                 if (this.hungerLevel < 0) {
                     this.hungerLevel = 100;
-                    this.ducksMurdered++; 
+                    this.ducksMurdered++;
+                    this.dispatchMurderEvent();
                 }
-                localStorage.setItem('duck-mode.state', JSON.stringify({ hungerLevel: this.hungerLevel, ducksMurdered: this.ducksMurdered }));
+                localStorage.setItem('duck-mode.state', JSON.stringify({hungerLevel: this.hungerLevel, ducksMurdered: this.ducksMurdered}));
                 this.updateChart();
             }, starvationRate);
 
@@ -36,12 +37,12 @@ export default function duckFeederWidget({ chart, lang, starvationRate, breadHea
                 this.$refs.duckmodeAudio.play();
                 this.audioPlayed = true;
             }
-            
-            this.hungerLevel +=breadHealth;
+
+            this.hungerLevel += breadHealth;
             if (this.hungerLevel > 100) {
                 this.hungerLevel = 100;
             }
-            localStorage.setItem('duck-mode.state', JSON.stringify({ hungerLevel: this.hungerLevel, ducksMurdered: this.ducksMurdered }));
+            localStorage.setItem('duck-mode.state', JSON.stringify({hungerLevel: this.hungerLevel, ducksMurdered: this.ducksMurdered}));
             this.updateChart();
         },
 
@@ -58,7 +59,7 @@ export default function duckFeederWidget({ chart, lang, starvationRate, breadHea
         updateChart() {
             const chart = this.getChart()
             chart.data = {
-                datasets:[{
+                datasets: [{
                     data: [this.hungerLevel, 100 - this.hungerLevel],
                     backgroundColor: [this.getStateColour(), "Gray"]
                 }],
@@ -68,10 +69,13 @@ export default function duckFeederWidget({ chart, lang, starvationRate, breadHea
             chart.update('resize')
         },
         getStateColour() {
-            return this.hungerLevel >=50 ? "Green": this.hungerLevel >= 20 ? "Orange": "Red";
+            return this.hungerLevel >= 50 ? "Green" : this.hungerLevel >= 20 ? "Orange" : "Red";
         },
         getChart() {
             return Chart.getChart(this.$refs.canvas);
+        },
+        dispatchMurderEvent() {
+            Livewire.dispatch('duck-murder')
         }
     }
 }
