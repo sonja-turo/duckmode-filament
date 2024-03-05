@@ -17,10 +17,10 @@ class Quaction extends Action
 
         $this->icon(FilamentIcon::resolve('duckmode::ducky'));
         $this->link(true);
-        
+
         $this->view('duckmode::button-quaction');
 
-        $this->action(function () : void {
+        $this->action(function (): void {
 
         });
     }
@@ -30,8 +30,9 @@ class Quaction extends Action
         return 'quack';
     }
 
-    public function getAudioAsset() {
+    public function getAudioAsset()
+    {
         return filament('duckmode-filament')
-            ->getAudioAssetsPath() . "/quack.mp3";
+            ->getAudioAssetsPath() . '/quack.mp3';
     }
 }
