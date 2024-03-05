@@ -77,7 +77,7 @@ class FeederWidget extends Widget
         Notification::make()
             ->danger()
             ->icon('duckmode-ducky')
-            ->title("You've murdered a Duck!")
+            ->title("You've murdered a duck!")
             ->body("Authorities have been informed about your wrongdoings")
             ->send();
     }
