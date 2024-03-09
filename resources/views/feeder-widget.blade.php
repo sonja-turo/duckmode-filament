@@ -31,7 +31,7 @@
                     <span x-text="ducksMurdered" class="font-bold"></span> {{ __('duckmode::duck.Ducks-murdered') }}.
                 </p>
             </div>
-            <div class="flex-1">
+            <div class="flex-1 flex justify-center">
                 <div style="position: relative; width:100px;">
                     <canvas
                         x-ref="canvas"
