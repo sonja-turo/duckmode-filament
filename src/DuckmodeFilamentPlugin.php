@@ -42,6 +42,6 @@ class DuckmodeFilamentPlugin implements Plugin
 
     public function getAudioAssetsPath(): string
     {
-        return ltrim("vendor/{$this->getId()}/audio", '/');
+        return "/vendor/{$this->getId()}/audio";
     }
 }
