@@ -8,6 +8,8 @@ return [
     'Ducks-murdered' => 'Ducks murdered',
     'Give-bread' => 'Give bread',
     'hungry' => 'Hungry',
+    'notifications_murderer_title' => 'You\'ve murdered a duck!',
+    'notifications_murderer_body' => 'Authorities have been informed about your wrongdoings.',
     'ok' => 'OK',
     'Quack' => 'Quack',
     'starving' => 'Starving',
