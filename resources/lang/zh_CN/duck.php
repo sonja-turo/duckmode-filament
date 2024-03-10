@@ -9,7 +9,7 @@ return [
     'Give-bread' => '给面包',
     'hungry' => '饥饿的',
     'notifications_murderer_title' => '你杀了一只鸭子!',
-    'notifications_murderer_body' => '当局已获悉您的不当行为',    
+    'notifications_murderer_body' => '当局已获悉您的不当行为',
     'ok' => '好的',
     'quack' => '嘎嘎',
     'starving' => '挨饿',

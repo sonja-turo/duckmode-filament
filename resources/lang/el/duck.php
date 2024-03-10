@@ -9,7 +9,7 @@ return [
     'Give-bread' => 'Δώσε ψωμί',
     'hungry' => 'πεινασμένος',
     'notifications_murderer_title' => 'Έχεις δολοφονήσει μια πάπια',
-    'notifications_murderer_body' => 'Οι αρχές έχουν ενημερωθεί για τις αδικίες σας.',     
+    'notifications_murderer_body' => 'Οι αρχές έχουν ενημερωθεί για τις αδικίες σας.',
     'ok' => 'Εντάξει',
     'quack' => 'Κομπογιαννίτης',
     'starving' => 'λιμοκτονούν',
