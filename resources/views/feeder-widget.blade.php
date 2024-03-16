@@ -21,7 +21,6 @@
             <div class="h-10 w-10">
                 @include('duckmode::duck-mode')
             </div>
-
             <div>
                 <h2
                     class="grid flex-1 text-base font-semibold leading-6 text-gray-950 dark:text-white"

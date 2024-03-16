@@ -45,6 +45,6 @@ const defaultOptions = {
 
 compile({
     ...defaultOptions,
-    entryPoints: ['./resources/js/components/feeder.js'],
-    outfile: './resources/dist/components/duckmode-feeder.js',
+    entryPoints: ['./resources/js/components/feeder.js', './resources/js/components/topnav.js'],
+    outdir: './resources/dist/components/',
 })

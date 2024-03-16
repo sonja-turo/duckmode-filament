@@ -76,7 +76,7 @@ export default function duckFeederWidget({duckId, chart, lang, starvationRate, b
             return Chart.getChart(this.$refs.canvas);
         },
         dispatchMurderEvent() {
-            Livewire.dispatch('duck-murder')
+            Livewire.dispatch('duck-murder');
         }
     }
 }

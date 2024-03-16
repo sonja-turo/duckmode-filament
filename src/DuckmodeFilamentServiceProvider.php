@@ -6,6 +6,9 @@ use BladeUI\Icons\Factory;
 use Filament\Support\Assets\AlpineComponent;
 use Filament\Support\Facades\FilamentAsset;
 use Filament\Support\Facades\FilamentIcon;
+use Filament\Support\Facades\FilamentView;
+use Filament\View\PanelsRenderHook;
+use Illuminate\Support\Facades\Blade;
 use Livewire\Livewire;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
@@ -40,6 +43,7 @@ class DuckmodeFilamentServiceProvider extends PackageServiceProvider
         ]);
 
         Livewire::component('duckmode-feeder', FeederWidget::class);
+        Livewire::component('duckmode-top-nav', DuckTopNav::class);
 
         $this->publishes([
             __DIR__ . '/../resources/audio' => public_path('vendor/duckmode-filament/audio'),
@@ -48,9 +52,15 @@ class DuckmodeFilamentServiceProvider extends PackageServiceProvider
         // Asset Registration
         FilamentAsset::register(
             assets: [
-                AlpineComponent::make('duckmode-feeder', __DIR__ . '/../resources/dist/components/duckmode-feeder.js'),
+                AlpineComponent::make('duckmode-feeder', __DIR__ . '/../resources/dist/components/feeder.js'),
+                AlpineComponent::make('duckmode-topnav', __DIR__ . '/../resources/dist/components/topnav.js'),
             ],
             package: 'sonjaturo/duckmode-filament'
+        );
+
+        FilamentView::registerRenderHook(
+            PanelsRenderHook::USER_MENU_BEFORE,
+            fn (): string => Blade::render('@livewire(\'duckmode-top-nav\')'),
         );
     }
 }
