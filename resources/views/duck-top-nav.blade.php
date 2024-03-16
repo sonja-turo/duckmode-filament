@@ -7,6 +7,6 @@
         @include('duckmode::duck-mode')
     </div>
     <div class="text-xs text-gray-500 dark:text-gray-400" @duck-murder.window="duckMurdered($event)">
-        <span x-text="ducksMurdered" class="font-bold"></span> {{ __('duckmode::duck.Ducks-murdered') }}.
+        <span x-text="ducksMurdered" class="font-bold"></span> {{ __('duckmode::duck.ducks-murdered') }}.
     </div>
 </div>

@@ -11,7 +11,7 @@ class Quaction extends Action
     {
         parent::setUp();
 
-        $this->label(__('duckmode::duck.Quack'));
+        $this->label(__('duckmode::duck.quack'));
 
         $this->color('gray');
 
