@@ -27,12 +27,12 @@ class FeederWidget extends Widget
         'rotation' => 270, // start angle in degrees
         'circumference' => 180, // sweep angle in degrees
         'plugins' => [
-            'legend'=> [
-                'display' => false
+            'legend' => [
+                'display' => false,
             ],
             'tooltip' => [
-                'enabled' => false
-            ]
+                'enabled' => false,
+            ],
         ],
     ];
 
@@ -46,7 +46,7 @@ class FeederWidget extends Widget
     {
         if (count($this->ducks) == 0) {
             $this->ducks = [
-                Duck::make()->toArray()
+                Duck::make()->toArray(),
             ];
         }
     }
@@ -85,8 +85,8 @@ class FeederWidget extends Widget
         $bread = (isset($properties['bread']) && $properties['bread'] instanceof Bread) ? $properties['bread'] : new Bread(BreadType::White);
         $properties['bread'] = $bread->getHealthValue();
 
-        if(isset($properties['ducks'])) {
-            foreach($properties['ducks'] as $index => $duck) {
+        if (isset($properties['ducks'])) {
+            foreach ($properties['ducks'] as $index => $duck) {
                 if ($duck instanceof Duck) {
                     $properties['ducks'][$index] = $duck->toArray();
                 }

@@ -50,8 +50,8 @@ class Duck implements Arrayable
     {
         return $this->bread;
     }
-    
-    public function name(string $name = null): self
+
+    public function name(?string $name = null): self
     {
         $this->name = $name;
 
@@ -60,7 +60,7 @@ class Duck implements Arrayable
 
     public function getName(): ?string
     {
-        return $this->name ?? __("Anonymous");
+        return $this->name ?? __('Anonymous');
     }
 
     public function reportMurder(bool $condition = true): self
@@ -78,7 +78,7 @@ class Duck implements Arrayable
     public function starvationRate(int $starvationRate = 1000): self
     {
         if ($starvationRate <= 0) {
-            throw new \InvalidArgumentException("The starvation rate must be a number of millseconds greater than zero and less than " . PHP_INT_MAX . ".");
+            throw new \InvalidArgumentException('The starvation rate must be a number of millseconds greater than zero and less than ' . PHP_INT_MAX . '.');
         }
 
         $this->starvationRate = $starvationRate;
