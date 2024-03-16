@@ -21,6 +21,8 @@ class FeederWidget extends Widget
 
     public bool $reportMurders = true;
 
+    public array $ducks = [];
+
     protected static ?array $options = [
         'rotation' => 270, // start angle in degrees
         'circumference' => 180, // sweep angle in degrees
@@ -30,6 +32,15 @@ class FeederWidget extends Widget
     {
         $this->audioAsset = filament('duckmode-filament')
             ->getAudioAssetsPath() . "/{$this->assetName}.mp3";
+    }
+
+    public function mount()
+    {
+        if (count($this->ducks) == 0) {
+            $this->ducks = [
+                Duck::make()->toArray()
+            ];
+        }
     }
 
     protected function getChartData(): array
@@ -66,6 +77,14 @@ class FeederWidget extends Widget
         $bread = (isset($properties['bread']) && $properties['bread'] instanceof Bread) ? $properties['bread'] : new Bread(BreadType::White);
         $properties['bread'] = $bread->getHealthValue();
 
+        if(isset($properties['ducks'])) {
+            foreach($properties['ducks'] as $index => $duck) {
+                if ($duck instanceof Duck) {
+                    $properties['ducks'][$index] = $duck->toArray();
+                }
+            }
+        }
+
         return parent::make($properties);
     }
 
@@ -79,8 +98,8 @@ class FeederWidget extends Widget
         Notification::make()
             ->danger()
             ->icon('duckmode-ducky')
-            ->title("You've murdered a duck!")
-            ->body('Authorities have been informed about your wrongdoings')
+            ->title(__('duckmode::duck.notifications_murderer_title'))
+            ->body(__('duckmode::duck.notifications_murderer_body'))
             ->send();
     }
 }

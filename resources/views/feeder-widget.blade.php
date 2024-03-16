@@ -1,18 +1,20 @@
-<x-filament-widgets::widget class="fi-account-widget">
+<x-filament-widgets::widget class="fi-account-widget flex flex-col gap-4">
+    @foreach($ducks as $duck)
     <x-filament::section>
         <div 
             x-ignore
             ax-load
             ax-load-src="{{ \Filament\Support\Facades\FilamentAsset::getAlpineComponentSrc('duckmode-feeder', 'sonjaturo/duckmode-filament') }}"
             x-data="duckFeederWidget({
+                duckId: '{{ $duck['slug'] }}',
                 chart: {
                         cachedData: @js($this->getChartData()),
                         options: @js($this->getChartOptions()),
                         type: @js($this->getChartType()),
                     },
                 lang: @js($this->getLang()),
-                starvationRate: {{ $this->starvationRate }},
-                breadHealth: {{ $this->bread }}
+                starvationRate: {{ $duck['starvationRate'] }},
+                breadHealth: {{ $duck['bread'] }}
                 })"
             class="flex items-center gap-x-3"
         >
@@ -24,7 +26,7 @@
                 <h2
                     class="grid flex-1 text-base font-semibold leading-6 text-gray-950 dark:text-white"
                 >
-                    {{ __('duckmode::duck.Quack') }}
+                    {{ $duck['name'] }}
                 </h2>
 
                 <p class="text-sm text-gray-500 dark:text-gray-400">
@@ -54,4 +56,5 @@
             </div>
         </div>
     </x-filament::section>
+    @endforeach
 </x-filament-widgets::widget>

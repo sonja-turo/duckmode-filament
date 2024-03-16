@@ -18,4 +18,9 @@ class Bread
             default => 5
         };
     }
+
+    public function getType(): BreadType
+    {
+        return $this->breadEnum;
+    }
 }
