@@ -14,5 +14,5 @@ return [
     'ok' => 'OK',
     'quack' => 'Quack',
     'starving' => 'Starving',
-    'times' => 'times'
+    'times' => 'times',
 ];
