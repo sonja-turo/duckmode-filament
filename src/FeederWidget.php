@@ -26,6 +26,14 @@ class FeederWidget extends Widget
     protected static ?array $options = [
         'rotation' => 270, // start angle in degrees
         'circumference' => 180, // sweep angle in degrees
+        'plugins' => [
+            'legend'=> [
+                'display' => false
+            ],
+            'tooltip' => [
+                'enabled' => false
+            ]
+        ],
     ];
 
     public function __construct()
