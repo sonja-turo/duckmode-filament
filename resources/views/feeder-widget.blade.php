@@ -29,7 +29,9 @@
                 </h2>
 
                 <p class="text-sm text-gray-500 dark:text-gray-400">
-                    <span x-text="ducksMurdered" class="font-bold"></span> {{ __('duckmode::duck.Ducks-murdered') }}.
+                    <span class="capitalize">{{ __('duckmode::duck.murdered') }}</span>
+                    <span x-text="ducksMurdered" class="font-bold"></span>
+                    {{ __('duckmode::duck.times') }}.
                 </p>
             </div>
             <div class="flex-1 flex justify-center">
@@ -50,7 +52,7 @@
                     type="button"
                     x-on:click="feedDuck"
                 >
-                    {{ __('duckmode::duck.Give-bread') }}
+                    {{ __('duckmode::duck.give-bread') }}
                 </x-filament::button>
             </div>
         </div>
